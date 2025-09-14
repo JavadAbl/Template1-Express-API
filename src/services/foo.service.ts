@@ -1,11 +1,11 @@
-import { Blog } from "#models/blog.model.js";
+import { Foo } from "#models/foo.model.js";
 
 const createFoo = async (body: any) => {
-  await Blog.create(body);
+  await Foo.create(body);
 };
 
 const getFoos = async () => {
-  const blogs = await Blog.find({});
+  const blogs = await Foo.find({});
   return blogs;
 };
 

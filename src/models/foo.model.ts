@@ -11,4 +11,4 @@ const fooSchema = new Schema({
   },
 });
 
-export const Blog = model("Foo", fooSchema);
+export const Foo = model("Foo", fooSchema);

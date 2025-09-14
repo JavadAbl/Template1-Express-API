@@ -4,18 +4,22 @@ import { createServer } from "http";
 import mongoose from "mongoose";
 import config from "#utils/config/config.js";
 
+// console.log(encodeURIComponent(config.DB_CONNECTION));
+
 mongoose
-  .connect(config.DB_CONNECTION)
+  .connect(encodeURI("mongodb+srv://admin:123456@cluster0.qto0oqu.mongodb.net"))
   .then(() => {
     logger.info("connected to mongodb");
   })
   .catch((err: unknown) => {
-    logger.error(err);
+    console.log(12321321);
+
+    logger.error(err.message, err);
   });
 
 const httpServer = createServer(app);
-const server = httpServer.listen(config.port, () => {
-  logger.info(`server listening on port ${config.port}`);
+const server = httpServer.listen(config.SERVER_PORT, () => {
+  logger.info(`server listening on port ${config.SERVER_PORT}`);
 });
 
 const exitHandler = () => {
