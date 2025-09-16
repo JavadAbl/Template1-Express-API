@@ -8,7 +8,7 @@ export const app = express();
 
 app.use(express.json());
 
-app.use(appRoutes);
+app.use("/api", appRoutes);
 
 app.use((req, res, next) => {
   next(new AppError(httpStatus.NOT_FOUND, "Not found"));

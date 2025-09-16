@@ -1,7 +1,7 @@
 import { z, ZodType } from "zod";
 import { AppError } from "#utils/app-error.js";
 
-export const validate = (schema: Record<string, ZodType<any, any, any>>) => (req: any, res: any, next: any) => {
+export const validate = (schema: ZodType<any, any>) => (req: any, res: any, next: any) => {
   // Pick only keys defined in the schema from the request
   const keys = Object.keys(schema);
 

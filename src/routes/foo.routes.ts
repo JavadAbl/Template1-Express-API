@@ -5,5 +5,5 @@ import fooController from "#controllers/foo.controller.js";
 
 export const fooRoutes = express.Router();
 
-fooRoutes.get("/foos", fooController.getFoos);
-fooRoutes.post("/foo", validate(createFooSchema), fooController.createFoo);
+fooRoutes.get("/GetAll", fooController.getFoos);
+fooRoutes.post("/Create", validate(createFooSchema), fooController.createFoo);

@@ -4,16 +4,12 @@ import { createServer } from "http";
 import mongoose from "mongoose";
 import config from "#utils/config/config.js";
 
-// console.log(encodeURIComponent(config.DB_CONNECTION));
-
 mongoose
-  .connect(encodeURI("mongodb+srv://admin:123456@cluster0.qto0oqu.mongodb.net"))
+  .connect(config.DB_CONNECTION)
   .then(() => {
     logger.info("connected to mongodb");
   })
-  .catch((err: unknown) => {
-    console.log(12321321);
-
+  .catch((err) => {
     logger.error(err.message, err);
   });
 

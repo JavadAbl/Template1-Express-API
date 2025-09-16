@@ -3,7 +3,7 @@ import httpStatus from "http-status";
 
 const createFoo = async (req, res) => {
   await fooService.createFoo(req.body);
-  res.status(httpStatus.CREATED).send({ success: true, message: "Blog created successfuly" });
+  res.status(httpStatus.CREATED).send({ success: true, message: "Foo created successfuly" });
 };
 
 const getFoos = async (req, res) => {
