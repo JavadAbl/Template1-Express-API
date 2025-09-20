@@ -1,14 +1,16 @@
 {
+  "name": "my-package",
   "type": "module",
   "imports": {
     "#*": {
+      "my-package-dev": "./src/*",
       "default": "./dist/*"
     }
   },
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "tsx --watch src/index.ts",
+    "dev": "tsx --conditions=my-package-dev --watch src/index.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",

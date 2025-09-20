@@ -7,7 +7,7 @@ build({
   bundle: true,
   platform: "node",
   target: ["node24"],
-  outfile: "dist/bundle.js",
+  outfile: "dist/bundle.cjs",
   format: "cjs", // ES module output
   external: ["fs", "path"],
 
